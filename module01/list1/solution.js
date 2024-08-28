@@ -181,7 +181,7 @@ function multiplicationTable() {
 //13. Fazer um algoritmo para receber números decimais até que o usuário digite 0 e fazer a média aritmética desses números.
 function arithmeticMean() {
     let counter = 0, sum = 0, number;
-    console.log(`Insira 0 para calcular a média`)
+    console.log(yellowColor(`Insira 0 para calcular a média!`));
     do {
         number = readNumber(`Insira o ${counter + 1}º número: `);
         if (number !== 0) {
