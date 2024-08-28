@@ -32,7 +32,7 @@ function isEven() {
     let result = "Ímpar";
     if (number % 2 === 0)
         result = "Par"
-    console.log(`O número ${yellowColor(number)} é ${result}`);
+    console.log(`O número ${yellowColor(number)} é ${result}.`);
 }
 
 //2. Crie um programa que classifica a idade de uma pessoa em categorias (criança, adolescente, adulto, idoso) com base no valor fornecido, utilizando uma estrutura de controle if-else.
@@ -47,7 +47,7 @@ function classifyAge() {
         result = "adulto";
     else
         result = "idoso";
-    console.log(`Com ${yellowColor(age)} anos de idade é considerado ${result}`);
+    console.log(`Com ${yellowColor(age)} anos de idade é considerado ${result}.`);
 }
 
 //3. Implemente um programa que recebe uma nota de 0 a 10 e classifica como "Aprovado", "Recuperação", ou "Reprovado" utilizando if-else if.
@@ -64,7 +64,7 @@ function studentResult() {
         result = "Recuperação";
     else
         result = "Aprovado";
-    console.log(`Com a nota ${yellowColor(grade)} a situação do aluno é de ${result}`);
+    console.log(`Com a nota ${yellowColor(grade)} a situação do aluno é de ${result}.`);
 }
 
 //4. Crie um menu interativo no console que oferece ao usuário a escolha de três opções. Utilize switch-case para implementar a lógica de cada opção selecionada.
@@ -83,7 +83,7 @@ function menu() {
             console.log(blueColor("Você escolheu a cor azul!"));
             break;
         default:
-            console.log("Você não escolheu nenhuma das opções");
+            console.log("Você não escolheu nenhuma das opções.");
             break;
     }
 }
@@ -104,7 +104,7 @@ function bmiCalculator() {
     else
         result = "obeso";
 
-    console.log(`Seu IMC é de ${yellowColor(bmi.toFixed(2))} e se encaixa na categoria de ${result}`);
+    console.log(`Seu IMC é de ${yellowColor(bmi.toFixed(2))} e se encaixa na categoria de ${result}.`);
 }
 
 //6. Ler três valores para os lados de um triângulo: A, B e C. Verificar se os lados fornecidos formam realmente um triângulo. Caso forme, deve ser indicado o tipo de triângulo: Isósceles, escaleno ou eqüilátero.
@@ -125,9 +125,9 @@ function classifyTriangle() {
         //Triângulo isósceles: possui dois lados iguais
         else
             result = "isósceles";
-        console.log(`Os lados formam um triângulo ${result}`);
+        console.log(`Os lados formam um triângulo ${result}.`);
     } else {
-        console.log("Os lados não formam um triângulo");
+        console.log("Os lados não formam um triângulo.");
     }
 }
 
@@ -136,7 +136,7 @@ function applePrice() {
     let apples = readNumber("Digite o número de maçãs compradas: ");
     let price = apples < 12 ? 0.30 : 0.25;
     let total = apples * price;
-    console.log(`Foram compradas ${apples} maçãs então o valor da conta é de R$ ${yellowColor(total.toFixed(2).replace(".", ","))}`);
+    console.log(`Foram compradas ${apples} maçãs então o valor da conta é de R$ ${yellowColor(total.toFixed(2).replace(".", ","))}.`);
 }
 
 //8. Escreva um algoritmo para ler 2 valores (considere que não serão lidos valores iguais) e escreve-los em ordem crescente.
@@ -181,6 +181,7 @@ function multiplicationTable() {
 //13. Fazer um algoritmo para receber números decimais até que o usuário digite 0 e fazer a média aritmética desses números.
 function arithmeticMean() {
     let counter = 0, sum = 0, number;
+    console.log(`Insira 0 para calcular a média`)
     do {
         number = readNumber(`Insira o ${counter + 1}º número: `);
         if (number !== 0) {
