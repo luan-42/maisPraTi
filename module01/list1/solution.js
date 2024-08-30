@@ -136,7 +136,7 @@ function applePrice() {
     let apples = readNumber("Digite o número de maçãs compradas: ");
     let price = apples < 12 ? 0.30 : 0.25;
     let total = apples * price;
-    console.log(`Foram compradas ${apples} maçãs então o valor da conta é de R$ ${yellowColor(total.toFixed(2).replace(".", ","))}.`);
+    console.log(`Foram compradas ${yellowColor(apples)} maçãs então o valor da conta é de R$ ${total.toFixed(2).replace(".", ",")}.`);
 }
 
 //8. Escreva um algoritmo para ler 2 valores (considere que não serão lidos valores iguais) e escreve-los em ordem crescente.
@@ -219,14 +219,14 @@ functions = [isEven, classifyAge, studentResult, menu, bmiCalculator,
     classifyTriangle, applePrice, sortTwo, countdown, tenTimes, 
     sumValues, multiplicationTable, arithmeticMean, factorial, fibonacci];
 
-let choice;
 while (true) {
     console.log(greenColor("[Escolha uma opção]"));
+    console.log(yellowColor(`Escolha 0 para finalizar o programa!`));
     //Imprimi uma mensagem com o nome das funções
     for (let i = 1; i <= functions.length; i++) {
         console.log(`[${i.toString().padEnd(2, " ")}] ${functions[i - 1].name}`);
     }
-    choice = readNumber("Escolha: ");
+    let choice = readNumber("Escolha: ");
     while (!(choice >= 0 && choice <= 15) || !Number.isInteger(choice)) {
         console.log(yellowColor("A escolha deve estar entre 0 e 15!"));
         choice = readNumber("Escolha: ");
