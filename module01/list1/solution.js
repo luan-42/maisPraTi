@@ -215,7 +215,7 @@ function fibonacci() {
 
 //O código a seguir é para um menu de opções para escolher qual função executar.
 //Coloca as funções em uma lista
-functions = [isEven, classifyAge, studentResult, menu, bmiCalculator, 
+let functions = [isEven, classifyAge, studentResult, menu, bmiCalculator, 
     classifyTriangle, applePrice, sortTwo, countdown, tenTimes, 
     sumValues, multiplicationTable, arithmeticMean, factorial, fibonacci];
 
