@@ -32,7 +32,7 @@ function isEven() {
     let result = "Ímpar";
     if (number % 2 === 0)
         result = "Par"
-    console.log(`O número ${yellowColor(number)} é ${result}.`);
+    console.log(`O número ${number} é ${result}.`);
 }
 
 //2. Crie um programa que classifica a idade de uma pessoa em categorias (criança, adolescente, adulto, idoso) com base no valor fornecido, utilizando uma estrutura de controle if-else.
@@ -47,7 +47,7 @@ function classifyAge() {
         result = "adulto";
     else
         result = "idoso";
-    console.log(`Com ${yellowColor(age)} anos de idade é considerado ${result}.`);
+    console.log(`Com ${age} anos de idade é considerado ${result}.`);
 }
 
 //3. Implemente um programa que recebe uma nota de 0 a 10 e classifica como "Aprovado", "Recuperação", ou "Reprovado" utilizando if-else if.
@@ -64,7 +64,7 @@ function studentResult() {
         result = "Recuperação";
     else
         result = "Aprovado";
-    console.log(`Com a nota ${yellowColor(grade)} a situação do aluno é de ${result}.`);
+    console.log(`Com a nota ${grade} a situação do aluno é de ${result}.`);
 }
 
 //4. Crie um menu interativo no console que oferece ao usuário a escolha de três opções. Utilize switch-case para implementar a lógica de cada opção selecionada.
@@ -104,7 +104,7 @@ function bmiCalculator() {
     else
         result = "obeso";
 
-    console.log(`Seu IMC é de ${yellowColor(bmi.toFixed(2))} e se encaixa na categoria de ${result}.`);
+    console.log(`Seu IMC é de ${bmi.toFixed(2)} e se encaixa na categoria de ${result}.`);
 }
 
 //6. Ler três valores para os lados de um triângulo: A, B e C. Verificar se os lados fornecidos formam realmente um triângulo. Caso forme, deve ser indicado o tipo de triângulo: Isósceles, escaleno ou eqüilátero.
@@ -132,18 +132,18 @@ function classifyTriangle() {
 }
 
 //7. As maçãs custam R$ 0,30 se forem compradas menos do que uma dúzia, e R$ 0,25 se forem compradas pelo menos doze. Escreva um algoritmo que leia o número de maçãs compradas, calcule e escreva o valor total da compra.
-function applePrice() {
+function calculateApplePrice() {
     let apples = readNumber("Digite o número de maçãs compradas: ");
     let price = apples < 12 ? 0.30 : 0.25;
     let total = apples * price;
-    console.log(`Foram compradas ${yellowColor(apples)} maçãs então o valor da conta é de R$ ${total.toFixed(2).replace(".", ",")}.`);
+    console.log(`Foram compradas ${apples} maçãs, então o valor da conta é de ${total.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}.`);
 }
 
 //8. Escreva um algoritmo para ler 2 valores (considere que não serão lidos valores iguais) e escreve-los em ordem crescente.
-function sortTwo() {
+function orderTwoNumbers() {
     let value1 = readNumber("Digite o primeiro valor: ");
     let value2 = readNumber("Digite o segundo valor: ");
-    console.log(yellowColor(value1 < value2 ? `${value1} ${value2}`: `${value2} ${value1}`));
+    console.log(value1 < value2 ? `${value1} ${value2}`: `${value2} ${value1}`);
 }
 
 //9. Implemente um programa que exibe uma contagem regressiva de 10 até 1 no console utilizando um loop for.
@@ -154,7 +154,7 @@ function countdown() {
 }
 
 //10. Escreva um algoritmo para ler um número inteiro e escrevê-lo na tela 10 vezes.
-function tenTimes() {
+function showTenTimes() {
     let number = readNumber("Digite um número: ");
     for (let i = 0; i < 10; i++) {
         console.log(number);
@@ -167,14 +167,14 @@ function sumValues() {
     for (let i = 1; i <= 5; i++) {
         accumulator += readNumber(`Digite o ${i}º valor: `);
     }
-    console.log(`Soma total: ${yellowColor(accumulator)}`);
+    console.log(`Soma total: ${accumulator}`);
 }
 
 //12. Crie um programa que exibe a tabuada de um número fornecido pelo usuário (de 1 a 10) utilizando um loop for.
 function multiplicationTable() {
     let number = readNumber("Digite um número: ");
     for (let i = 1; i <= 10; i++) {
-        console.log(`${number} x ${i} = ${yellowColor(number * i)}`);
+        console.log(`${number} x ${i} = ${number * i}`);
     }
 }
 
@@ -189,7 +189,7 @@ function arithmeticMean() {
             sum += number;
         }
     } while (number !== 0)
-    console.log(`Média aritmética: ${yellowColor(sum / counter)}`);
+    console.log(`Média aritmética: ${sum / counter}`);
 }
 
 //14. Crie um programa que calcula o fatorial de um número fornecido pelo usuário utilizando um loop for ou while.
@@ -199,7 +199,7 @@ function factorial() {
     for (let i = number; i > 0; i--) {
         result *= i;
     }
-    console.log(`${number}! = ${yellowColor(result)}`);
+    console.log(`${number}! = ${result}`);
 }
 
 //15. Escreva um programa que gera e imprime os primeiros 10 números da sequência de Fibonacci utilizando um loop for.
@@ -214,10 +214,12 @@ function fibonacci() {
 }
 
 //O código a seguir é para um menu de opções para escolher qual função executar.
-//Coloca as funções em uma lista
-let functions = [isEven, classifyAge, studentResult, menu, bmiCalculator, 
-    classifyTriangle, applePrice, sortTwo, countdown, tenTimes, 
-    sumValues, multiplicationTable, arithmeticMean, factorial, fibonacci];
+
+let functions = [
+    isEven, classifyAge, studentResult, menu, bmiCalculator, 
+    classifyTriangle, calculateApplePrice, orderTwoNumbers, countdown, showTenTimes, 
+    sumValues, multiplicationTable, arithmeticMean, factorial, fibonacci
+];
 
 while (true) {
     console.log(greenColor("[Escolha uma opção]"));
