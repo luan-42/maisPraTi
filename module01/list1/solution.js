@@ -222,11 +222,12 @@ let functions = [
 ];
 
 while (true) {
+    console.clear();
     console.log(greenColor("[Escolha uma opção]"));
-    console.log(yellowColor(`Escolha 0 para finalizar o programa!`));
+    console.log(`0 - Sair`);
     //Imprimi uma mensagem com o nome das funções
     for (let i = 1; i <= functions.length; i++) {
-        console.log(`[${i.toString().padEnd(2, " ")}] ${functions[i - 1].name}`);
+        console.log(`${i} - ${functions[i - 1].name}`);
     }
     let choice = readNumber("Escolha: ");
     while (!(choice >= 0 && choice <= 15) || !Number.isInteger(choice)) {
@@ -237,9 +238,9 @@ while (true) {
     //Se escolher 0 finaliza o loop
     if (choice === 0)
         break;
-    console.log(greenColor(`[${functions[choice - 1].name}]`));
+    choice--;
+    console.log(greenColor(`[${functions[choice].name}]`));
     //Executa a função escolhida
-    functions[choice - 1]();
+    functions[choice]();
     prompt();
-    console.clear();
 }
