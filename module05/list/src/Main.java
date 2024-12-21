@@ -52,7 +52,7 @@ public class Main {
         System.out.println("Digite a segunda palavra: ");
         String secondWord = sc.next();
 
-        if (isAnagrams(firstWord, secondWord)) {
+        if (isAnagram(firstWord, secondWord)) {
             System.out.println("A palavra " + firstWord + " e " + secondWord + " são anagramas!");
         } else {
             System.out.println("A palavra " + firstWord + " e " + secondWord + " NÃO são anagramas!");
@@ -105,7 +105,7 @@ public class Main {
         return str.reverse().toString();
     }
 
-    static boolean isAnagrams(String word, String anotherWord) {
+    static boolean isAnagram(String word, String anotherWord) {
         char[] wordArray = word.toLowerCase().toCharArray();
         char[] anotherWordArray = anotherWord.toLowerCase().toCharArray();
         Arrays.sort(wordArray);
